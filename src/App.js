@@ -1,25 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import { HolaMundo } from './Componentes/Ejercicio1';
+import { HolaMundo2 } from './Componentes/Ejercicio2';
+import { HolaMundo3 } from './Componentes/Ejercicio3';
+import { TaskForm } from './Componentes/Ejercicio4';
+import Ejercicio6 from './Componentes/Ejercicio6';
+import { Ejercicio7 } from './Componentes/Ejercicio7/Ejercicio7';
+import RouterPrincipal from './routers/RouterPrincipal';
 
-function App() {
+export const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+  <RouterPrincipal/>
+  </>
+  )
 }
-
-export default App;
