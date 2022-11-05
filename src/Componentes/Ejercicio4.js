@@ -25,7 +25,7 @@ export const TaskForm = () => {
     };
   
     return (
-      <div>
+      <div className="d-flex flex-column align-items-center">
         <Form onSubmit={handleSubmit} className="w-50">
           <Form.Group className="mb-3 d-flex">
             <Form.Control

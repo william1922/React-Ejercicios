@@ -8,11 +8,11 @@ const CitasCard = ({citas, eliminarCita}) => {
   return (
     <div className='w-25 bg-dark bg-opacity-10 rounded'>
         <div className='d-flex p-1 m-2'>
-            <div className='bg-primary bg-opacity-75 rounded-circle w-25'>.</div>
-            <div>
-                <div className='w-100 d-flex flex-column align-items-start'>
-                    <p>Mascota: {citas.nombreMascota}</p>
-                    <p>Dueño: {citas.nombreDuenio}</p>
+            <div className='circulo-celeste align-self-center'>.</div>
+            <div className='d-flex align-items-center'>
+                <div className='w-100 d-flex flex-column align-items-center'>
+                    <p className='d-flex'>Mascota: {citas.nombreMascota}</p>
+                    <p className='d-flex'>Dueño: {citas.nombreDuenio}</p>
                 </div>
             </div>
         </div>

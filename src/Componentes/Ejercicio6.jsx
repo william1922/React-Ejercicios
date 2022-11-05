@@ -6,6 +6,7 @@ function Ejercicio6() {
   const coloresLocalStorage =
     JSON.parse(localStorage.getItem("colorLista")) || [];
   const [coloresLista, setColoresLista] = useState(coloresLocalStorage);
+  const [colorCuadro, setColorCuadro] = useState("")
 
   useEffect(() => {
     localStorage.setItem("colorLista", JSON.stringify(coloresLista));
@@ -25,6 +26,7 @@ function Ejercicio6() {
     }
     setColoresLista([...coloresLista, cardNueva]);
     e.target.reset()
+    setColorCuadro("")
   };
 
   const eliminarCard = (id) => {
@@ -36,18 +38,20 @@ function Ejercicio6() {
 
   return (
     <div>
-      <div className="bg-warning d-flex flex-column justify-content-center container w-75">
+      <div className="d-flex flex-column container w-75">
         <h1>Administrador de colores</h1>
         <Form
           onSubmit={handleSubmit}
-          className="d-flex flex-row bg-success align-items-center justify-content-around"
+          className="d-flex flex-row contenedor-form-color align-items-center justify-content-around"
         >
-          <div className="bg-primary w-25">color</div>
+          <div className="w-25 cuadro-color container text-center border rounded" style={{backgroundColor:`${colorCuadro}`}}>color</div>
           <input
-            className="w-50"
+            className="w-50 rounded border"
             name="colorTarjeta"
             type="text"
             placeholder="Ingrese color"
+            value={colorCuadro}
+            onChange={(e) => {setColorCuadro(e.target.value)}}
           />
           <Button type="submit" className="d-flex align-self-end">
             Guardar

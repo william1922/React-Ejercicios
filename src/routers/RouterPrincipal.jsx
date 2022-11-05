@@ -1,4 +1,4 @@
-
+import {routes as listaRutas} from './routes'
 import React from 'react'
 import { NavLink, BrowserRouter, Route, Routes } from 'react-router-dom'
 import { HolaMundo } from '../Componentes/Ejercicio1'
@@ -9,38 +9,34 @@ import Ejercicio6 from '../Componentes/Ejercicio6'
 import { Ejercicio7 } from '../Componentes/Ejercicio7/Ejercicio7'
 import Ejercicio8 from '../Componentes/Ejercicio8/Ejercicio8'
 import Ejercicio9 from '../Componentes/Ejercicio9/Ejercicio9'
+import Ejercicio10 from '../Componentes/Ejercicio10/Ejercicio10'
+import Ejercicio11 from '../Componentes/Ejercicio11/Ejercicio11'
+import Ejercicio12 from '../Componentes/Ejercicio12/Ejercicio12'
+import { Col, Row } from 'react-bootstrap'
 
 const RouterPrincipal = () => {
     return (
         <BrowserRouter>
             <h1>Ejercicios React</h1>
             <nav>
-                <ul className='d-flex align-items-center container' type='none'>
-                    <li className='d-flex'>
-                        <NavLink className='text-decoration-none text-center m-1 border rounded bg-success bg-opacity-50 h3' to='/inicio'>Ejercicio 1</NavLink>
-                    </li>
-                    <li className='d-flex'>
-                        <NavLink className='text-decoration-none text-center m-1 border rounded bg-success bg-opacity-50 h3' to='/ejercicio2'>Ejercicio 2</NavLink>
-                    </li>
-                    <li className='d-flex'>
-                        <NavLink className='text-decoration-none text-center m-1 border rounded bg-success bg-opacity-50 h3' to='/ejercicio3'>Ejercicio 3</NavLink>
-                    </li>
-                    <li className='d-flex'>
-                        <NavLink className='text-decoration-none text-center m-1 border rounded bg-success bg-opacity-50 h3' to='/ejercicio4-5'>Ejercicio 4-5</NavLink>
-                    </li>
-                    <li className='d-flex'>
-                        <NavLink className='text-decoration-none text-center m-1 border rounded bg-success bg-opacity-50 h3' to='/ejercicio6'>Ejercicio 6</NavLink>
-                    </li>
-                    <li className='d-flex'>
-                        <NavLink className='text-decoration-none text-center m-1 border rounded bg-success bg-opacity-50 h3' to='/ejercicio7'>Ejercicio 7</NavLink>
-                    </li>
-                    <li className='d-flex'>
-                        <NavLink className='text-decoration-none text-center m-1 border rounded bg-success bg-opacity-50 h3' to='/ejercicio8'>Ejercicio 8</NavLink>
-                    </li>
-                    <li className='d-flex'>
-                        <NavLink className='text-decoration-none text-center m-1 border rounded bg-success bg-opacity-50 h3' to='/ejercicio9'>Ejercicio 9</NavLink>
-                    </li>
+                
+                <ul className='container' type='none'>
+                <Row className=''>
+                    {listaRutas.map((ruta, index) => (
+                         <Col key={index} md={2} className="">
+                     
+                        <li className='d-flex'>
+                            <NavLink to={ruta.path}
+                            className={(datosNavagacion) => {
+                                const isActivado = datosNavagacion.isActive;
+                                return isActivado ? "activado container d-flex text-decoration-none text-center m-2 border rounded bg-success bg-opacity-50 h3" : "text-decoration-none los-links text-center container border rounded bg-success bg-opacity-50 h3"
+                            }}>{ruta.name}</NavLink>
+                        </li>
+                        </Col>
+                    ))}
+                    </Row>
                 </ul>
+                
             </nav>
             <Routes>
                 <Route path='/inicio' element={<HolaMundo />} />
@@ -51,6 +47,9 @@ const RouterPrincipal = () => {
                 <Route path='/ejercicio7' element={<Ejercicio7 />} />
                 <Route path='/ejercicio8' element={<Ejercicio8 />} />
                 <Route path='/ejercicio9' element={<Ejercicio9 />} />
+                <Route path='/ejercicio10' element={<Ejercicio10/>}/>
+                <Route path='/ejercicio11' element={<Ejercicio11/>}/>
+                <Route path='/ejercicio12' element={<Ejercicio12/>}/>
                 <Route path='*' element={<><h1>Error 404</h1></>} />
             </Routes>
         </BrowserRouter>
