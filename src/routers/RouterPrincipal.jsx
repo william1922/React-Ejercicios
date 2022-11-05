@@ -11,8 +11,8 @@ import Ejercicio8 from '../Componentes/Ejercicio8/Ejercicio8'
 import Ejercicio9 from '../Componentes/Ejercicio9/Ejercicio9'
 import Ejercicio10 from '../Componentes/Ejercicio10/Ejercicio10'
 import Ejercicio11 from '../Componentes/Ejercicio11/Ejercicio11'
-import Ejercicio12 from '../Componentes/Ejercicio12/Ejercicio12'
 import { Col, Row } from 'react-bootstrap'
+import Ejercicio13 from '../Componentes/Ejercicio13/Ejercicio13'
 
 const RouterPrincipal = () => {
     return (
@@ -29,7 +29,7 @@ const RouterPrincipal = () => {
                             <NavLink to={ruta.path}
                             className={(datosNavagacion) => {
                                 const isActivado = datosNavagacion.isActive;
-                                return isActivado ? "activado container d-flex text-decoration-none text-center m-2 border rounded bg-success bg-opacity-50 h3" : "text-decoration-none los-links text-center container border rounded bg-success bg-opacity-50 h3"
+                                return isActivado ? "activado container d-flex text-decoration-none text-center m-4 border rounded bg-success bg-opacity-50 h3" : "text-decoration-none los-links text-center my-5 m-4 container border rounded bg-success bg-opacity-50 h3"
                             }}>{ruta.name}</NavLink>
                         </li>
                         </Col>
@@ -49,7 +49,7 @@ const RouterPrincipal = () => {
                 <Route path='/ejercicio9' element={<Ejercicio9 />} />
                 <Route path='/ejercicio10' element={<Ejercicio10/>}/>
                 <Route path='/ejercicio11' element={<Ejercicio11/>}/>
-                <Route path='/ejercicio12' element={<Ejercicio12/>}/>
+                <Route path='/ejercicio13' element={<Ejercicio13/>}/>
                 <Route path='*' element={<><h1>Error 404</h1></>} />
             </Routes>
         </BrowserRouter>

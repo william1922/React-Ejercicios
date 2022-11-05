@@ -41,7 +41,7 @@ export const routes = [
         path: '/ejercicio11'
     },
     {
-        name: 'Ejercicio 12',
-        path: '/ejercicio12'
+        name: 'Ejercicio 13',
+        path: '/ejercicio13'
     }
 ]
