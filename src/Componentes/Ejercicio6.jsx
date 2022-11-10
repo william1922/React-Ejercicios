@@ -37,8 +37,8 @@ function Ejercicio6() {
   }
 
   return (
-    <div>
-      <div className="d-flex flex-column container w-75">
+    <div className="d-flex flex-column justify-content-center container">
+      <div className="d-flex border flex-column justify-content-center container w-75">
         <h1>Administrador de colores</h1>
         <Form
           onSubmit={handleSubmit}

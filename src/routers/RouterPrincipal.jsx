@@ -29,7 +29,7 @@ const RouterPrincipal = () => {
                             <NavLink to={ruta.path}
                             className={(datosNavagacion) => {
                                 const isActivado = datosNavagacion.isActive;
-                                return isActivado ? "activado container d-flex text-decoration-none text-center m-4 border rounded bg-success bg-opacity-50 h3" : "text-decoration-none los-links text-center my-5 m-4 container border rounded bg-success bg-opacity-50 h3"
+                                return isActivado ? "activado container d-flex text-decoration-none text-center m-1 border rounded bg-success bg-opacity-50 h3" : "text-decoration-none los-links text-center my-2 m-1 container border rounded bg-success bg-opacity-50 h3"
                             }}>{ruta.name}</NavLink>
                         </li>
                         </Col>

@@ -1,14 +1,15 @@
-import { ListGroup } from "react-bootstrap"
+import { Col, Row } from "react-bootstrap"
 import CardColor from "./CardColor"
 
 
 function ListaColores({coloresLista, eliminarCard}) {
   return (
-    <ListGroup className="d-flex flex-row container justify-content-around list-group list-group-horizontal my-3">
+    <Row className="d-flex flex-row w-100 container justify-content-center list-group list-group-horizontal my-3">
         {
-            coloresLista.map((card, index) => <CardColor key={index}  card={card} eliminarCard={eliminarCard}></CardColor>)
+            coloresLista.map((card, index) => <Col key={index}  md={3}><CardColor card={card} eliminarCard={eliminarCard}></CardColor>
+            </Col>)
         }
-    </ListGroup>
+    </Row>
   )
 }
 
