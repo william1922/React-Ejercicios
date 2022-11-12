@@ -8,19 +8,19 @@ const Ejercicio11 = () => {
 
   const [noticiasData, setNoticiasData] = useState([]);
 
- 
-   const getDara = async ( pais='ar', categorias='business') => {
+   const getDara = async ( pais, categorias) => {
+    console.log(pais, categorias)
     const link = 'https://newsapi.org/v2/top-headlines?'
     const keyApi = '5e5d67fa93c64cc7b6dfbfee83a1c1b5'
 
      try {
-        const result = await fetch(`${link}country=${pais}&category${categorias}&apikey=${keyApi}`)
+        const result = await fetch(`${link}country=${pais}&category=${categorias}&apikey=${keyApi}`)
         const data = await result.json();
         setNoticiasData(data.articles)
      } catch (error) {
         console.log(error)
      }
-  
+
    }
 
 
@@ -29,10 +29,11 @@ const Ejercicio11 = () => {
     let pais = e.target.pais.value;
     let categoria = e.target.categoria.value;
     getDara(pais, categoria)
+    console.log(noticiasData)
    }
   
    useEffect(() => {
-    getDara()
+    getDara("ar", "business")
    }, [])
   return (
     <div className='d-flex flex-column align-items-center'>
@@ -55,7 +56,7 @@ const Ejercicio11 = () => {
             </div>
             <div className='mx-4'>
             <label className='mx-2'>Categoria</label>
-            <select className='align-self-center' name='categoria'>
+            <select className='align-self-center' name='categoria' required>
                 <option value="business">Negocios</option>
                 <option value="entertainment">Entretenimiento</option>
                 <option value="general">General</option>
