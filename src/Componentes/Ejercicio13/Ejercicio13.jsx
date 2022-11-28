@@ -13,7 +13,7 @@ const Ejercicio13 = () => {
   /*const getCords = async(texto) => {
     
     try {
-      const result = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${texto}&appid=47a31d010f6123003ec243fe1cc303ae`)
+      const result = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${texto}&appid=`)
       let data = await result.json();
       let latitud = data[0].lat
       let longitud = data[0].lon
@@ -25,7 +25,7 @@ const Ejercicio13 = () => {
   }*/
   const getCords = async(texto) => {
     try {
-      const result = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${texto}&appid=47a31d010f6123003ec243fe1cc303ae`)
+      const result = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${texto}&appid=`)
       const data = await result.json();
       setLat(data[0].lat.toString())
       setLon(data[0].lon.toString())
@@ -42,7 +42,7 @@ const Ejercicio13 = () => {
   
   const getWeather = async( long, lati) => {
     try {
-      const result = await fetch(`https://api.openweathermap.org/data/3.0/onecall?lat=${lati}&lon=${long}&units=metric&lang=sp&appid=47a31d010f6123003ec243fe1cc303ae`);
+      const result = await fetch(`https://api.openweathermap.org/data/3.0/onecall?lat=${lati}&lon=${long}&units=metric&lang=sp&appid=`);
       const data = await result.json();
       setObjetoClima(data)
     } catch (error) {
@@ -84,7 +84,7 @@ const Ejercicio13 = () => {
   const getCords = async(texto='lima,peru') => {
    console.log(texto)
     try {
-      const result = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${texto}&appid=47a31d010f6123003ec243fe1cc303ae`)
+      const result = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${texto}&appid=`)
       const data = await result.json();
       setLat(data[0].lat.toString())
       setLon(data[0].lon.toString())
@@ -97,9 +97,9 @@ const Ejercicio13 = () => {
 
   
   const getWeather = async( long='8.8701539', lati='50.039186') => {
-    console.log(`https://api.openweathermap.org/data/3.0/onecall?lat=${lati}&lon=${long}&units=metric&lang=sp&appid=47a31d010f6123003ec243fe1cc303ae`)
+    console.log(`https://api.openweathermap.org/data/3.0/onecall?lat=${lati}&lon=${long}&units=metric&lang=sp&appid=`)
     try {
-      const result = await fetch(`https://api.openweathermap.org/data/3.0/onecall?lat=${lati}&lon=${long}&units=metric&lang=sp&appid=47a31d010f6123003ec243fe1cc303ae`);
+      const result = await fetch(`https://api.openweathermap.org/data/3.0/onecall?lat=${lati}&lon=${long}&units=metric&lang=sp&appid=`);
       const data = await result.json();
       console.log(data)
     } catch (error) {
