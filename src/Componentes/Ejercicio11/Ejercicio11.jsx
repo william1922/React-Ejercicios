@@ -11,7 +11,7 @@ const Ejercicio11 = () => {
    const getDara = async ( pais, categorias) => {
     console.log(pais, categorias)
     const link = 'https://newsapi.org/v2/top-headlines?'
-    const keyApi = '5e5d67fa93c64cc7b6dfbfee83a1c1b5'
+    const keyApi = ''
 
      try {
         const result = await fetch(`${link}country=${pais}&category=${categorias}&apikey=${keyApi}`)
